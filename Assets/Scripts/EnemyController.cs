@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
 
     private float _movement;
 
+    public Sprite[] zombieSkins;
+
     private Rigidbody2D _rb;
     private PlayerController _target;
     private Vector3 _direction;
@@ -26,6 +28,12 @@ public class EnemyController : MonoBehaviour
         currentHealth = _maxHealth;
         _animator = GetComponentInChildren<Animator>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        int temp = Random.Range(0, zombieSkins.Length);
+        _spriteRenderer.sprite = zombieSkins[temp];
     }
 
     private void Update()

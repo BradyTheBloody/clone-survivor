@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
             shootingDirection = _shootingTarget.transform.position - transform.position;
         }
 
+        
         Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
     }
 
